@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanseFlow - Login & Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="perspective w-full max-w-md h-[650px]">
+        <div id="flipper" class="flipper-card relative">
+            
+            <!-- Front Face: Login Form -->
+            <div class="flipper-front">
+                <div class="form-container rounded-2xl p-8 shadow-2xl text-white h-full flex flex-col justify-center">
+                    <div class="text-center mb-10">
+                        <h2 class="text-4xl font-bold">Welcome Back</h2>
+                        <p class="text-purple-200 mt-2">Sign in to your account</p>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <div class="mb-5">
+                            <label for="loginEmail" class="block mb-2 text-sm font-medium text-purple-200">Email</label>
+                            <input type="email" id="loginEmail" class="w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition duration-300" placeholder="you@example.com" required>
+                        </div>
+                        <div class="mb-8">
+                            <label for="loginPassword" class="block mb-2 text-sm font-medium text-purple-200">Password</label>
+                            <input type="password" id="loginPassword" class="w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition duration-300" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                            Login
+                        </button>
+                    </form>
+
+                    <p class="text-center text-sm text-purple-200 mt-8">
+                        No account yet? 
+                        <a href="#" id="showRegister" class="font-medium text-purple-300 hover:underline">Register Now</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Back Face: Register Form -->
+            <div class="flipper-back">
+                <div class="form-container rounded-2xl p-8 shadow-2xl text-white h-full flex flex-col justify-center">
+                    <div class="text-center mb-6">
+                        <h2 class="text-4xl font-bold">Create Account</h2>
+                        <p class="text-purple-200 mt-2">Join the data revolution</p>
+                    </div>
+                    
+                    <form id="registerForm" class="space-y-4">
+                        <div>
+                            <label for="registerName" class="block mb-2 text-sm font-medium text-purple-200">Full Name</label>
+                            <input type="text" id="registerName" class="w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="registerEmail" class="block mb-2 text-sm font-medium text-purple-200">Email</label>
+                            <input type="email" id="registerEmail" class="w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition" placeholder="you@example.com" required>
+                        </div>
+                        <div>
+                            <label for="registerPassword" class="block mb-2 text-sm font-medium text-purple-200">Password</label>
+                            <input type="password" id="registerPassword" class="w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition" placeholder="••••••••" required>
+                        </div>
+
+                        <!-- Captcha Section -->
+                        <div>
+                             <label for="captchaInput" class="block mb-2 text-sm font-medium text-purple-200">Verification</label>
+                            <div class="flex items-center gap-4">
+                               <div id="captchaText" class="w-full flex-1 h-12 flex items-center justify-center"></div>
+                               <button type="button" id="refreshCaptcha" class="p-3 bg-white/20 hover:bg-white/30 rounded-lg transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+                               </button>
+                            </div>
+                            <input type="text" id="captchaInput" class="mt-2 w-full p-3 input-field rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition" placeholder="Enter text above" required>
+                        </div>
+
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg !mt-6">
+                            Create Account
+                        </button>
+                    </form>
+
+                    <p class="text-center text-sm text-purple-200 mt-6">
+                        Already have an account? 
+                        <a href="#" id="showLogin" class="font-medium text-purple-300 hover:underline">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanseFlow - Account Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .input-field {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, color 0.2s;
+            color: #4b5563; /* gray-600 */
+        }
+        .nav-link:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .nav-link.active {
+            background-color: #e9d5ff; /* purple-200 */
+            color: #5b21b6; /* purple-800 */
+            font-weight: 600;
+        }
+        .nav-link svg {
+            margin-right: 0.75rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="header text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">🧹 CleanseFlow</a>
+            <div>
+                <a href="app.html" class="bg-white/20 hover:bg-white/30 text-white font-semibold py-2 px-4 rounded-lg transition mr-4">Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6 lg:p-8">
+        <div class="max-w-6xl mx-auto md:flex md:space-x-8">
+            <!-- Left Side Navigation -->
+            <aside class="w-full md:w-1/4 lg:w-1/5 mb-8 md:mb-0">
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <nav id="settings-nav" class="space-y-1">
+                        <a href="#account" class="nav-link active">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            Account
+                        </a>
+                        <a href="#security" class="nav-link">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            Security
+                        </a>
+                        <a href="#plan" class="nav-link">
+                           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Plan Details
+                        </a>
+                        <a href="#settings" class="nav-link">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Settings
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Right Content Area -->
+            <div class="w-full md:w-3/4 lg:w-4/5">
+                <div id="account" class="content-section bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-2">Account Overview</h2>
+                    <p class="text-slate-500 mb-8">Manage your membership and payment details.</p>
+                    <div class="flex items-center space-x-6 border-b pb-8 mb-8">
+                        <img src="https://placehold.co/100x100/667eea/ffffff?text=U" alt="User Profile" class="w-24 h-24 rounded-full">
+                        <div>
+                            <h3 id="profile-name" class="text-xl font-bold">John Doe</h3>
+                            <p id="profile-email" class="text-slate-600">john.doe@example.com</p>
+                            <p class="text-xs text-slate-400 mt-1">Member since: Jan 2024</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Membership & Billing</h4>
+                        <button class="text-sm text-blue-600 hover:underline">Cancel Membership</button>
+                    </div>
+                </div>
+                
+                <div id="security" class="content-section hidden bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-2">Security</h2>
+                    <p class="text-slate-500 mb-8">Change your password and secure your account.</p>
+                    <form id="change-password-form" class="space-y-4 max-w-md border-b pb-8 mb-8">
+                        <div>
+                            <label for="current-password" class="block text-sm font-medium text-slate-600 mb-1">Current Password</label>
+                            <input type="password" id="current-password" class="w-full p-3 input-field rounded-lg" required>
+                        </div>
+                        <div>
+                            <label for="new-password" class="block text-sm font-medium text-slate-600 mb-1">New Password</label>
+                            <input type="password" id="new-password" class="w-full p-3 input-field rounded-lg" required>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition">Update Password</button>
+                    </form>
+                    <div>
+                        <h4 class="font-semibold mb-2">Secure Your Account</h4>
+                        <button class="text-sm text-blue-600 hover:underline">Sign out of all devices</button>
+                    </div>
+                </div>
+
+                <div id="plan" class="content-section hidden bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-2">Plan Details</h2>
+                    <p class="text-slate-500 mb-8">Manage your subscription plan.</p>
+                    <div class="border rounded-lg p-6 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold text-lg text-purple-700">Premium Plan</h4>
+                            <p class="text-slate-600">Unlimited file uploads and AI assistance.</p>
+                        </div>
+                        <button class="text-sm text-blue-600 hover:underline font-semibold">Change Plan</button>
+                    </div>
+                </div>
+
+                <div id="settings" class="content-section hidden bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-2">Settings</h2>
+                    <p class="text-slate-500 mb-8">Control your experience across CleanseFlow.</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Language</h4>
+                            <select class="p-3 input-field rounded-lg border">
+                                <option>English</option>
+                                <option disabled>Spanish (coming soon)</option>
+                                <option disabled>French (coming soon)</option>
+                            </select>
+                        </div>
+                        <div class="border-t pt-6">
+                            <h4 class="font-semibold mb-2">Communication Settings</h4>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" class="h-5 w-5 rounded text-purple-600 focus:ring-purple-500" checked>
+                                <span class="text-slate-700">Receive emails about product updates and offers.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('#settings-nav .nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(hash) {
+                const targetId = (hash && document.getElementById(hash.substring(1))) ? hash.substring(1) : 'account';
+                contentSections.forEach(section => {
+                    section.classList.toggle('hidden', section.id !== targetId);
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.hash === `#${targetId}`);
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.hash;
+                    history.pushState(null, '', targetId);
+                    showSection(targetId);
+                });
+            });
+
+            window.addEventListener('popstate', () => {
+                showSection(window.location.hash);
+            });
+
+            showSection(window.location.hash);
+
+            const changePasswordForm = document.getElementById('change-password-form');
+            changePasswordForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Password updated successfully! (Demo)');
+                changePasswordForm.reset();
+            });
+
+            // --- Load User Info ---
+            const profileName = document.getElementById('profile-name');
+            const profileEmail = document.getElementById('profile-email');
+            const profileInitialImg = document.querySelector('img[alt="User Profile"]');
+
+            // Get user info from localStorage (this should be set on the login page)
+            const storedName = localStorage.getItem('cleanseFlowUserName');
+            const storedEmail = localStorage.getItem('cleanseFlowUserEmail');
+
+            if (storedName) {
+                profileName.textContent = storedName;
+                if (profileInitialImg) {
+                    const initial = storedName.charAt(0).toUpperCase();
+                    profileInitialImg.src = `https://placehold.co/100x100/667eea/ffffff?text=${initial}`;
+                }
+            }
+            if (storedEmail) {
+                profileEmail.textContent = storedEmail;
+            }
+            // --- End Load User Info ---
+        });
+    </script>
+</body>
+</html>
